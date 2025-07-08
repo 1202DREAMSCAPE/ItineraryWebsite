@@ -42,10 +42,10 @@ const Dashboard = () => {
     });
   };
 
-  if (loading) return <p>Loading profile...</p>;
+  if (loading) return <p class="text-center">Loading profile...</p>;
 
   return (
-    <div className="bg-green-100 p-6 rounded shadow max-w-xl mx-auto space-y-4">
+    <div className="bg-green-100 p-6 rounded shadow max-w-xl mx-auto space-y-4 animate-fade-in">
       <Toaster position="top-center" /> {/* Toast anchor */}
 
       <h2 className="text-xl font-bold mb-2">👤 Profile Settings</h2>
