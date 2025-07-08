@@ -1,0 +1,32 @@
+{
+  "name": "baguio-trip-website",
+  "version": "1.0.0",
+  "description": "A mobile responsive website for managing a trip to Baguio, including itinerary, bill splitting, weather integration, and fun activities.",
+  "main": "src/App.js",
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "tailwindcss": "^2.2.19",
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1",
+    "postcss": "^8.4.5",
+    "autoprefixer": "^10.4.2"
+  },
+  "keywords": [
+    "trip",
+    "baguio",
+    "itinerary",
+    "bill splitting",
+    "weather",
+    "spin the wheel"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
