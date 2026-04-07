@@ -1,11 +1,12 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
-        publicPath: '/', // Optional: for correct asset resolution
+        publicPath: '/', // Update this if deploying to a subdirectory
     },
     module: {
         rules: [
@@ -22,18 +23,26 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif|svg)$/i,
-                type: 'asset/resource', // ✅ modern Webpack asset loader
+                type: 'asset/resource',
             },
         ],
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './public/index.html', // Automatically injects the bundle into index.html
+        }),
+    ],
     devServer: {
         static: {
             directory: path.join(__dirname, 'public'),
         },
         compress: true,
-        port: 3000,
+        port: 3050,
         open: true,
         hot: true,
-        historyApiFallback: true, // optional for React Router
+        historyApiFallback: true, // Ensures React Router works
+    },
+    resolve: {
+        extensions: ['.js', '.jsx'], // Optional: Resolve .js and .jsx files automatically
     },
 };
